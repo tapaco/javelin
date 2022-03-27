@@ -1,7 +1,18 @@
 import streamlit as st
 import pyrebase
 from PIL import Image
-from config import firebaseConfig
+
+# config files
+firebaseConfig = {
+    'apiKey': "AIzaSyCR0W9FPOAZCWWEINysuE2QGdaZ2tBBGcI",
+    'authDomain': "palyanytsya-c3eb4.firebaseapp.com",
+    'projectId': "palyanytsya-c3eb4",
+    'databaseURL': "https://palyanytsya-c3eb4-default-rtdb.europe-west1.firebasedatabase.app/",
+    'storageBucket': "palyanytsya-c3eb4.appspot.com",
+    'messagingSenderId': "416655451409",
+    'appId': "1:416655451409:web:268d8e2600d4dfeb21d8b0",
+    'measurementId': "G-4Z9WJ6FSKW"
+} 
 
 # firebase auth
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -17,10 +28,7 @@ st.markdown('---')
 
 st.sidebar.markdown('# Useful links')
 st.sidebar.markdown('- [Ukrainian Institute London](https://refugee-support.ukrainianinstitute.org.uk/): a one-stop shop for UK hosts who are supporting Ukrainians from entering to settling in the UK')
-st.sidebar.markdown('- [Support Ukraine Coordination Hub](https://supportukraine.uk/): a London-based charity coordinating the combined logistical support and humantarian response of Ukrainians living in the UK helping those back home')
-st.sidebar.markdown('- [British-Ukrainian Aid](https://supportukraine.uk/): a UK-based charity supporting everyone suffering from the war and humanitarian crisis in Ukraine, including the injured and wounded, orphaned children, the elderly, internally displaced persons, refugees and families who have lost their breadwinners.')
 st.sidebar.markdown('- [Homes for Ukraine](https://homesforukraine.campaign.gov.uk/): the UK Government site which allows UK hosts to sponsor matched Ukrainians')
-
 
 col1, col2 = st.columns(2)
 

@@ -1,7 +1,7 @@
 import streamlit as st
 import pyrebase
 from PIL import Image
-from config import firebaseConfig
+from config.py import firebaseConfig
 
 # firebase auth
 firebase = pyrebase.initialize_app(firebaseConfig)
