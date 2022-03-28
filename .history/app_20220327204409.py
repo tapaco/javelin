@@ -24,7 +24,7 @@ st.sidebar.markdown('- [Homes for Ukraine](https://homesforukraine.campaign.gov.
 
 col1, col2 = st.columns(2)
 
-str_child_age = 'N/A'
+child_age = 'N/A'
 
 with col1:
     name = st.text_input('First Name')

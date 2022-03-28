@@ -24,7 +24,7 @@ st.sidebar.markdown('- [Homes for Ukraine](https://homesforukraine.campaign.gov.
 
 col1, col2 = st.columns(2)
 
-str_child_age = 'N/A'
+child_age = 'N/A'
 
 with col1:
     name = st.text_input('First Name')
@@ -62,16 +62,13 @@ form = {
 }
 
 if submit: 
-    try:
-        user = auth.create_user_with_email_and_password(email, password)
-        user = auth.sign_in_with_email_and_password(email, password)
+    user = auth.create_user_with_email_and_password(email, password)
+    user = auth.sign_in_with_email_and_password(email, password)
 
-        save_form = db.child("users").push(form, user['idToken'])
-        save_photos = storage.child(f"images/users/'{email}'").put(photos, user['idToken'])
-        st.success('Thank you, your form has been submitted successfully! We will be in touch once there is a match') 
-
-    except:
-        st.error('There has been an error with submitting your form, please use another email address or email contact@familiesforukraine.co.uk')
+    save_form = db.child("users").push(form, user['idToken'])
+    save_photos = storage.child(f"images/users/'{email}'").put(photos, user['idToken'])
+    st.success('Thank you, your form has been submitted successfully! We will be in touch once there is a match') 
+    #st.error('There has been an error with submitting your form, please try another email address or contact@familiesforukraine.co.uk')
 
 st.markdown('---')
 hide_streamlit_style = """
